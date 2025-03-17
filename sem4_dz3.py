@@ -27,6 +27,9 @@ rich_tax = Decimal(0.1)
 
 
 def get_money(balance: Decimal):
+    """
+    Подсчитывает снятия средств со счета.
+    """
     print('Комиссия за снятие -1,5%')
     g_money = Decimal(input('Введите сумму снятия: '))
     prcnt = g_money * comm_percent
@@ -58,6 +61,9 @@ def get_money(balance: Decimal):
 
 
 def put_money(balance: Decimal):
+    """
+    Подсчитывает пополнение счета.
+    """
     p_money = Decimal(input('Введите сумму пополнения: '))
     if p_money % min_sum == 0:
         balance = balance + p_money
@@ -74,6 +80,9 @@ def put_money(balance: Decimal):
 
 
 def menu(balance: Decimal, count: int):
+    """
+    Запускает основное меню.
+    """
     if balance > rich_limit:
         print('C баланса счета свыше 5млн, удерживается налог на богатство -10%!!!')
         balance *= (1 - rich_tax)
